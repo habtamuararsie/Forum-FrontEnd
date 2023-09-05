@@ -20,7 +20,9 @@ const Home = () => {
     try {
       const questionRes = await axios.get(
         // "http://localhost:4001/api/questions",  
-        "https://odd-red-wombat-robe.cyclic.cloud/api/questions",   );
+        // "https://odd-red-wombat-robe.cyclic.cloud/api/questions", 
+        `${process.env.REACT_APP_base_url}/api/questions`,
+          );
       setAllQuestions(questionRes.data.data);
       console.log(questionRes)
     } catch (err) {

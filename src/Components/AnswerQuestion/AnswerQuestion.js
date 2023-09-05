@@ -14,7 +14,7 @@ const AnswerQuestion = ({ questionId }) => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:4001/api/answers",
+        `${process.env.REACT_APP_base_url}/api/answers`,
         {
           id: userData.user.id,
           questionId: questionId,
